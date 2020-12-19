@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.ntiextra.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Admin\\Desktop\\bt2\\Beyond-Tangibility_v2.0\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\Admin\\Desktop\\bt2.1\\Beyond-Tangibility_v2.0\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "NTI Extra [Testing]"
