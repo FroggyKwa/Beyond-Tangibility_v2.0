@@ -14,6 +14,7 @@ public class ObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         StonesPrefabs = Resources.LoadAll<GameObject>("Prefabs");
         spawnStones();
     }
@@ -26,13 +27,18 @@ public class ObjectSpawner : MonoBehaviour
 
     void spawnStones()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < spawnCount; i++)
         {
             Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
             GameObject stone = spawnStone(pos);
             Rigidbody stone_rigidbody = stone.AddComponent<Rigidbody>();
-            stone.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            stone.transform.localScale = new Vector3(3, 3, 3);
+            stone.AddComponent<StoneInteraction>();
             BoxCollider stone_colider = stone.AddComponent<BoxCollider>();
+            BoxCollider stone_trigger_collider = stone.AddComponent<BoxCollider>();
+            stone.tag = "interactive";
+            stone_trigger_collider.isTrigger = true;
+            stone_trigger_collider.size = new Vector3(10, 10, 10);
             stone_rigidbody.mass = 2f;
             stone.name = "stone_" + i;
         }
